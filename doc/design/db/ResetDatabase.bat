@@ -7,3 +7,5 @@ mysql -u root -p  < GW_Script_CreateDB_MySQL.sql
 
 ECHO Step 3: Create tables for the database goodway...
 mysql -u goodway -pGoodway@123 goodway < GW_Script_Table_MYSQL.sql
+
+PAUSE

@@ -1,4 +1,4 @@
-drop table if exists goodway_delivery_batch;
+﻿drop table if exists goodway_delivery_batch;
 drop table if exists goodway_order_detail_product;
 drop table if exists goodway_order_master;
 drop table if exists goodway_customer;
@@ -6,6 +6,7 @@ drop table if exists goodway_address;
 drop table if exists goodway_vehicle_status;
 drop table if exists goodway_vehicle;
 drop table if exists goodway_product;
+drop table if exists goodway_question;
 
 create table goodway_address (
       id int not null auto_increment
@@ -168,3 +169,21 @@ create table goodway_delivery_batch (
     , primary key (id)
 	, FOREIGN KEY (order_id) REFERENCES goodway_order_master(id)
 );
+
+CREATE TABLE goodway_question (
+  id int NOT NULL AUTO_INCREMENT,
+  category varchar(100),
+  question varchar(1000) NOT NULL,
+  ask_person varchar(100),
+  ask_date date,
+  answer varchar(1000),
+  answer_person varchar(100),
+  answer_date date,
+  status tinyint(1),
+  created datetime not null,
+  createdby_username varchar(50) not null,
+  lastmodified datetime,
+  lastmodifiedby_username varchar(50),
+
+  PRIMARY KEY(id)
+)
